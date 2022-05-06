@@ -1,0 +1,1 @@
+web gunicorn PlayerAnalytics.wsgi:application --log-file -

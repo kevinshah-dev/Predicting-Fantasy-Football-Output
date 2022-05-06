@@ -1,0 +1,12 @@
+<!-- List of 300 players with links to their player page. Not needed since search bar added -->
+
+<div style="margin-left:6rem;">
+	<h1 >Select Player:</h1>
+	<ul>
+		{% for player in players %}
+			<li>
+				<a href="/predictions/player/{{ player.name }}/">{{ player.name }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
