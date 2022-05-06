@@ -10,4 +10,4 @@ Visit us at https://cs216-project.herokuapp.com/predictions
 
 This project will demonstrate our group's mastery of CS 216 criteria including scraping/cleaning large amounts of data, using machine learning to make meaningful conclusions about that data, and presenting it using a SQLite3 database.
 
-Read CS216 Final Project.pdf first to get an idea of what this project is and a summary of our findings. 
+Read CS216 Final Project.pdf first to get an idea of what this project is and a summary of our findings. After that, look through Initial Model.ipynb
