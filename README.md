@@ -1,4 +1,4 @@
-# CS 216 Player Analytics Project
+# Fantasy Football Player Analytics Project
 
 Visit us at https://cs216-project.herokuapp.com/predictions
 
