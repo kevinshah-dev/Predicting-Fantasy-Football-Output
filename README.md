@@ -1,6 +1,6 @@
 # Fantasy Football Player Analytics Project
 
-Visit us at https://cs216-project.herokuapp.com/predictions
+Visit us at https://cs216-project.herokuapp.com/predictions/home/
 
 ### To edit this site and see the results in your browser:
 - Follow instructions from the top post at https://stackoverflow.com/questions/37094032/how-to-run-cloned-django-project
