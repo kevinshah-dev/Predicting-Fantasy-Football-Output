@@ -1,0 +1,148 @@
+body {
+    font-family: 'MontSerrat', sans-serif;
+    font-weight: 500;
+    min-width: 100%;
+    margin: 0 0;
+    background-color:rgba(180, 133, 167, 0.335);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 20px;
+}
+
+a, a:visited {
+    text-decoration:none;
+    color:blue;
+}
+
+.nav {
+    height:4rem;
+    background-color: white;
+    padding: 0.2rem 0;
+    border-bottom: 1.5px solid black;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.nav div {
+    flex-basis:50%;
+}
+
+.nav img {
+    max-height: 4rem;
+    margin-left: 0.8rem;
+}
+
+#search {
+    display:flex;
+    width:50rem;
+    margin:0 auto;
+    flex-direction:column;
+    height:40px;
+    margin-top:6rem;
+}
+
+#search input[type=text] {
+    display: flex;
+    max-width: 800px;
+    height:40px;
+    border-radius: 50px;
+    border-color: rgba(0, 0, 0, 1);
+    border-width: 1.5px;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 1);
+    text-indent:20px;
+    margin: 0 auto;
+    margin-top:-40px;
+    min-width:100%;
+    min-height:100%;
+    z-index:2;
+    /* Comment out comic input below for original */
+    box-shadow: 0.9px 0.8px 1.5px 0px #000000;
+  }
+
+#search input[type=text]:focus {
+    background-color: rgb(222, 222, 223);
+    outline:none;
+}
+
+#search div.search-icon {
+    z-index:3;
+    align-self:flex-end;
+    padding-right:10px;
+}
+
+#search button {
+    display:contents;
+    cursor:pointer;
+}
+
+#search i {
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+#search li {
+    background-color:white;
+    border: 1.5px solid black;
+    border-top:none;
+    width: 46rem;
+    margin-left: -20px;
+    padding: 8px 0px 8px 12px;
+    font-weight: 500;
+    transition: background-color 250ms;
+}
+
+#search li:hover {
+    background-color:rgba(0, 255, 255, 0.193);
+}
+
+#search ul {
+    list-style-type:none !important;
+    margin-top:-4px;
+    cursor:pointer;
+}
+
+.centered-column {
+    width: 100%; 
+    margin: 0 auto; 
+    text-align:center;
+}
+
+#info-box {
+    width:36rem;
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    margin:0 auto;
+    margin-top:2rem;
+    background-size: cover;
+}
+
+#info-box .logo {
+    flex-basis:45%;
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+}
+
+#info-box .logo img {
+    width:12rem;
+    margin-left:1rem;
+}
+
+#info-box .info {
+    flex-basis:55%;
+    text-align:left;
+}
+
+#info-box .info p {
+    color:white;
+    font-size:24px;
+    font-weight:700;
+}
