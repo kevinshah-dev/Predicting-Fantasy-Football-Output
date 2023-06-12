@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Player Analytics</title>
+		{% load static %}
+		<meta name="description" content="ML-driven predictor for NFL players' season performances.">
+		<meta name="author" content="CS216">
+
+		<meta property="og:title" content="Player Analytics">
+		<meta property="og:type" content="website">
+		<!-- <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/"> -->
+		<meta property="og:description" content="ML-driven predictor for NFL players' season performances.">
+		<!-- <meta property="og:image" content="image.png"> -->
+
+		<!-- <link rel="icon" href="/favicon.ico"> -->
+		<!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
+		<!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+		
+
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="nav">
+			<div>
+				<a href="/predictions/home/"><img src="{% static 'images/NFL_logo.png' %}"></a>
+			</div>
+			<div>
+				<p style="text-align:right;margin-right:2rem;">{{ user.username }}</p>
+			</div>
+		</div>
+		{% block content %}{% endblock %}
+		<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+		<script src="{% static 'js/script.js' %}"></script>
+	</body>
+</html>

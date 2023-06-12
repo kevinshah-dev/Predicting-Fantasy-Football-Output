@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<form action="/predictions/player/" method="GET">
+	{% csrf_token %}
+	<div id="search">
+		<div class="search-icon">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+			<input type="text" name="player" placeholder="Search by Name" autofocus>
+		
+		<ul></ul>
+	</div>
+	<p style="font-size:26px;width:50%;margin: 7rem auto">
+		Welcome to our site! Using this platform, users can search up any NFL player in the database and look at an individual NFL player’s current and projected fantasy statistics for the 2021-2022 season. This website was created for our CS 216 final project. We used several different technologies to develop this including Django, Python, and Seaborn. Enjoy!
+	</p>
+</form>
+
+{% endblock %}

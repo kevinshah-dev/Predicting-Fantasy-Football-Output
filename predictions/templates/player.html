@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+{% if player|length == 1 %}
+
+<div class="centered-column">
+    <div style="position:absolute">
+        <a href="/predictions/home/"><i class="fa fa-arrow-left fa-3x"></i></a>
+    </div>
+    <div id="info-box" style="background-image:url({{ infobox.background }});height:100%;padding-top:1rem">
+        <img src="{{infobox.headshot}}" style="width:18rem;align-self:flex-end;">
+        <div class="info">
+            <p>{{ player.0.name }}</p>
+            <p>{{ player.0.position }}</p>
+            <p>{{ infobox.team }}</p>
+        </div>
+        <div class="logo">
+            <img src="{{infobox.logo}}">
+        </div>
+    </div>
+    
+    <div style="display:flex;flex-direction:row;justify-content:center;margin-top:4rem">
+        <div style="flex-basis:36%;">
+            <table>
+            {% for field in fields %}
+                {% if field.field not in exclude_list %}
+                    <tr style="">
+                        <td style="border:2px solid black;font-weight:700;background-color:rgba(107, 56, 155, 0.439);padding:0rem 2rem">{{field.field_name}}</td>
+                        <td style="width:1.5rem"></td>
+                        <td style="background-color:rgba(27, 160, 200, 0.715);padding: 1rem 2rem;border-radius:1rem">{{ field.stat }}</td>
+                    </tr>
+                    <tr style="height:0.5rem">
+
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </table>
+        </div>
+        <div style="flex-basis:30%;margin-top:6rem;border: 2px solid black;padding: 2rem 0rem;height:fit-content;background-color:antiquewhite">
+            <span style="font-size:20px;font-weight:600">
+                Predicted Points:
+            </span>
+            <br>
+            <span style="font-size:20px;margin-top:0.75rem">
+                {{prediction}} points
+            </span>
+            <br>
+            <br>
+            <span style="font-size:20px;font-weight:600">
+                Actual Fantasy Points:
+            </span>
+            <br>
+            <span style="font-size:20px;margin-top:0.75rem">
+                {{player.0.points}} points
+            </span>
+            <br>
+            <br>
+            <br>
+            <span style="font-size:20px;font-weight:600">
+                Our model was off by:
+            </span>
+            <br>
+            <span style="font-size:20px;margin-top:0.75rem">
+                {{error}} %
+            </span>
+        </div>
+    </div>
+</div>
+
+{% elif player|length > 1 %}
+
+    <h2>Your search returned multiple results. Choose one below:</h2>
+	<ul>
+		{% for i in player %}
+			<li>
+				<a href="/predictions/player/?player={{ i.name }}/">{{ i.name }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+{% else %}
+
+    <h2>Sorry, we couldn't any players who match the following search: {{ query }}. Try again below:</h2>
+    <form action="/predictions/player/" method="POST">
+        {% csrf_token %}
+        <div id="search">
+            <div class="search-icon">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+                <input type="text" name="player_search" placeholder="Search by Name" autofocus>
+            
+            <ul></ul>
+        </div>
+    </form>
+
+{% endif %}
+
+{% endblock %}
